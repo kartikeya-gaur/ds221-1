@@ -13,9 +13,21 @@ using namespace std;
 
 // Feel free to introduce more helper functions
 
-int question_one(const vector<int>& delta) {
-    // TODO: Implement function
-    return 0;
+long long question1(const std::vector<int>& X) {
+    if (X.empty()) return 0;
+    long long sum = 0;
+    long long max_sum = X[0];
+
+    for (int val : X) {
+        sum += val;
+        if (sum > max_sum) {
+            max_sum = sum;
+        }
+        if (sum < 0) {
+            sum = 0;
+        }
+    }
+    return max_sum;
 }
 
 int question_two(const vector<int>& values, const vector<bool>& present) {
